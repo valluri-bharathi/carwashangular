@@ -1,0 +1,43 @@
+body {
+    padding-top:50px;
+    text-align: center;
+}
+fieldset {
+    border: thin solid #ccc; 
+    border-radius: 4px;
+    padding: 20px;
+    padding-left: 40px;
+    background: #fbfbfb;
+    width: 100%;
+    height: 100%;
+}
+legend {
+   color: #678;
+}
+.form-control {
+    width: 95%;
+}
+label small {
+    color: #678 !important;
+}
+span.req {
+    color:maroon;
+    font-size: 112%;
+}
+h1{
+    text-align: center;
+}
+.map{
+    text-align: center;
+ }
+/* .form-control{
+    text-align: center;
+    
+}
+.col-md-6
+{
+    text-align: center;
+}
+.container{
+    text-align: center;
+} */
