@@ -48,14 +48,7 @@ export class UserLoginService {
     return this.http.post("http://localhost:8083/login/user",customerDetails,{responseType:'text' as 'json'});
   }
 
-  // public login(custDetails){
-
-  //     this.http.post("http://localhost:8082/customer/login",custDetails).
-  //     toPromise().then((data: any)=>{
-  //       console.log(data);
-  //       console.log(JSON.stringify(data.json.message));
-  //     })
-  // }
+ 
 
   public addDetails(custCarDetails){
     return this.http.post("http://localhost:8083/login/details",custCarDetails,{responseType:'text' as 'json'});

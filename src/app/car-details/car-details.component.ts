@@ -26,10 +26,13 @@ export class CarDetailsComponent implements OnInit {
     this.service.addDetails(this.custCarDetails).subscribe(
       data =>{
         console.log(data);
+        
+         alert("data added successfully to database");
       },
       error =>{
         alert("error occurred");
       }
     )
   }
+  
   }
