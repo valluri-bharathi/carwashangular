@@ -29,6 +29,10 @@ span.req {
 }
 h1{
     text-align: center;
+    border-spacing: 15px 50px;
+}
+h3{
+    text-align:right;
 }
 .map{
    text-align: center;

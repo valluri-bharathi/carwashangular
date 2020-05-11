@@ -10,50 +10,16 @@ import { map } from 'rxjs/operators';
 export class UserLoginService {
 
 
-  // isLoggedIn: boolean = false;    
-  // store the URL so we can redirect after logging in
-  public redirectUrl: '/addDetails';
-
-  // constructor (
-  //  private http: HttpClient,
-  //  private router: Router
-  // ) {}
-
-  // login(custDetails): Observable<any> {
-    // const postData ={
-    //     userName: custDetails.userName,
-    //     password: custDetails
-    // };
-
-  //   console.log("ghh");
-  //   return this.http.post('http://localhost:8082/customer/login', 
-  //   JSON.stringify(custDetails)).pipe(map((response) => {
-  //     // do whatever with your response
-  //     // this.isLoggedIn = true;
-  //     console.log("1234");
-  //     if (response==="LoggedIn Successfully") {
-  //       this.router.navigate([this.redirectUrl]);
-  //       this.redirectUrl = null;
-  //     }
-  //   }))
-  // }
-
-  // logout(): void {
-  //   this.isLoggedIn = false;
-  // }
-
   constructor(private http:HttpClient) { }
 
   public login(customerDetails){
-    return this.http.post("http://localhost:8083/login/user",customerDetails,{responseType:'text' as 'json'});
+    return this.http.post("http://localhost:8084/login/user",customerDetails);
   }
-
- 
 
   public addDetails(custCarDetails){
-    return this.http.post("http://localhost:8083/login/details",custCarDetails,{responseType:'text' as 'json'});
+    return this.http.post("http://localhost:8084/login/details",custCarDetails,{responseType:'text' as 'json'});
   }
   public register(customerDetails){
-    return this.http.post("http://localhost:8083/login/register",customerDetails,{responseType:'text' as 'json'});
+    return this.http.post("http://localhost:8084/login/register",customerDetails,{responseType:'text' as 'json'});
   }
 }
