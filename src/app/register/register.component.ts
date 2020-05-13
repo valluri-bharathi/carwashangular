@@ -11,6 +11,8 @@ export class RegisterComponent implements OnInit {
 
   customerDetails: CustomerDetails= new CustomerDetails("","");
   message: any;
+  public errorMsg;
+  errorcontrol: boolean=false;
   constructor(private service:UserLoginService,public router:Router){}
 
   ngOnInit(): void {
@@ -27,7 +29,9 @@ export class RegisterComponent implements OnInit {
     this.router.navigate(['/login']);
       },
       error =>{
-        alert("error occurred");
+        alert("user already exists");
+        this.errorMsg = error.error.message;
+        this.errorcontrol = true;
       }
   )
   }

@@ -31,14 +31,12 @@ export class LoginComponent implements OnInit {
         console.log("entered");
         this.cuDetail=data;
         localStorage.setItem('name',JSON.stringify(this.cuDetail.userName));
-        // sessionStorage.setItem('email',JSON.stringify(this.cuDetail.email));
        console.log(JSON.parse(localStorage.getItem("name")));
-      //  console.log(JSON.parse(sessionStorage.getItem("email")));
         console.log(data);
         this.router.navigate(['/addDetails']);
       },
       error =>{
-        alert("error occurred");
+      alert("enter correct credentials");
         this.errorMsg = this.service;
         this.errorcontrol = true;
       }

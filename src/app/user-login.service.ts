@@ -22,4 +22,7 @@ export class UserLoginService {
   public register(customerDetails){
     return this.http.post("http://localhost:8084/login/register",customerDetails,{responseType:'text' as 'json'});
   }
+  public view(custCarDetails){
+    return this.http.post("http://localhost:8084/login/view", custCarDetails);
+  }
 }

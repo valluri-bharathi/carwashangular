@@ -59,7 +59,47 @@
                         <input class="btn btn-success" type="submit" name="submit_reg" value="submit" (click)="saveDetails()" >
                        
                       
- </div>
+ 
+ 
+  <input class="btn btn-success" type="submit" name="submit_reg" value="view" (click)="viewDetails()" style="float: right;" >
+</div>
+  
+  <div class="main">
+    <div class="header">
+        <table class="table">
+        </table>
+    </div>
+    <div class="sub">
+
+        <div class="subdiv">
+            <table class="table">
+
+                <thead class="thead-dark">
+
+                   
+                    <th>CarName</th>
+                    <th>Payment Details</th>
+                    <th>Package</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let str of list'>
+                       
+                        <td>{{str.carName}}</td>
+                        <td>{{str.paymentDetails}}</td>
+                        <td>{{str.packAge}}</td>
+                        <td>{{str.date}}</td>
+                        <td>{{str.time}}</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        </div>
+        </div>
+<!-- </div> -->
                 </fieldset>
         </div>
         </div>

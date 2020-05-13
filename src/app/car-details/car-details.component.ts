@@ -16,6 +16,7 @@ export class CarDetailsComponent implements OnInit {
   
   custCarDetails: CustCarDetails= new CustCarDetails("","","","","","");
  userName1: any;
+  list: any;
 
   constructor(private service:UserLoginService,public router: Router) { }
 
@@ -34,10 +35,27 @@ export class CarDetailsComponent implements OnInit {
         console.log(data);
         this.router.navigate(['/success']);
         
-        //  alert("data added successfully to database");
+        
       },
       error =>{
-        alert("error occurred");
+      
+        alert("Please fill All Details ");
+      }
+     
+      
+    )
+  }
+  public viewDetails(){
+    this.custCarDetails.userName=this.custName1;
+    // alert(this.custName1);
+    this.list=[];
+    this.service.view(this.custCarDetails).subscribe(
+      data =>{
+        
+        this.list=data;
+      }
+      ,error =>{
+        alert("no records found");
       }
     )
   }
