@@ -59,5 +59,10 @@ export class CarDetailsComponent implements OnInit {
       }
     )
   }
+  public delete(){
+    alert('Select an id');
+    this.router.navigate(['/delete']);
+    
+  }
  
   }

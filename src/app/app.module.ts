@@ -10,7 +10,8 @@ import { UserLoginService } from './user-login.service';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import { RegisterComponent } from './register/register.component';
 import { SuccessComponent } from './success/success.component';
-import { ViewComponent } from './view/view.component';
+import { DeleteComponent } from './delete/delete.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ViewComponent } from './view/view.component';
     CarDetailsComponent,
     RegisterComponent,
     SuccessComponent,
-    ViewComponent
+    DeleteComponent
+    
   ],
   imports: [
     BrowserModule,

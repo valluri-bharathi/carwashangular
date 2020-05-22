@@ -1,6 +1,7 @@
 export class CustCarDetails{
 
     custName:String;
+    _id:String;
     userName:String;
     carName : String;
     paymentDetails : String; 

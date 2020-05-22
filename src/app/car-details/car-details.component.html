@@ -2,108 +2,104 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <div class="container">
-  <div style="text-align: right;"><h3>Welcome {{custName1}}</h3></div>
-  
-    <form id="map">
-        <div id="form-wrapper"
-        style="max-width:500px;
-        margin: auto;">
+  <div style="text-align: right;">
+    <h3>Welcome {{custName1}}!!</h3>
+  </div>
 
-    <div class="row">
-        <div class="col-md-6">
-                <fieldset>
-                    <!-- <h3>Welcome to uName</h3> -->
-                    <h1>Add Details</h1>
 
-                    <div class="form-group">
-                        <label for="carName">CarName :</label>
-                        <input type="text" class="form-control" id="userName" [(ngModel)]="custCarDetails.carName" name="userName" id="txt"
-                        placeholder="Enter car name"  required>
-                      </div>
 
-                      <div class="form-group">
-                        <label for="paymentDetails">Payment Details :</label>
-                        <select input type="text" class="form-control" id="paymentDetails" [(ngModel)]="custCarDetails.paymentDetails" name="paymentDetails" id="txt"
-                        placeholder="select mode of payment"  required>
-                            <option value="cod" selected>COD</option>
-                            <option value="credit card" selected>Credit/debit card</option>
-                            <option value="online" selected>Paytm/phnPe/GPay</option>
-                        </select>
-                    
-                      </div>
+  <div class="row">
+    <div class="col-md-6">
+      <fieldset>
 
-                   <div class="form-group">
-                    <label for="packAge">Package :</label>
-                    <select input type="text" class="form-control" id="packAge" [(ngModel)]="custCarDetails.packAge" name="userName" id="txt"
-                    placeholder="select package"  required>
-                    <option value="gold" selected>Gold</option>
-                    <option value="silver " selected>Silver</option>
-                    <option value="platinum" selected>Platinum</option>
-                </select>
-                  </div>
+        <h1>Add Details</h1>
 
-                  <div class="form-group">
-                    <label for="date">Date :</label>
-                    <input type="date" class="form-control" id="date" [(ngModel)]="custCarDetails.date" name="date" id="txt"
-                    placeholder="select date"  required>
-                  </div>
+        <div class="form-group">
+          <label for="carName">CarName :</label>
+          <input type="text" class="form-control" id="userName" [(ngModel)]="custCarDetails.carName" name="userName"
+            id="txt" placeholder="Enter car name" required>
+        </div>
 
-                  <div class="form-group">
-                    <label for="time">Time :</label>
-                    <input type="time" class="form-control" id="time" [(ngModel)]="custCarDetails.time" name="time" id="txt"
-                    placeholder="select time"  required>
-                  </div>
-                    
+        <div class="form-group">
+          <label for="paymentDetails">Payment Details :</label>
+          <select input type="text" class="form-control" id="paymentDetails" [(ngModel)]="custCarDetails.paymentDetails"
+            name="paymentDetails" id="txt" placeholder="select mode of payment" required>
+            <option value="cod" selected>COD</option>
+            <option value="credit card" selected>Credit/debit card</option>
+            <option value="online" selected>Paytm/phnPe/GPay</option>
+          </select>
 
-                    <div class="form-group">
-                        <input class="btn btn-success" type="submit" name="submit_reg" value="submit" (click)="saveDetails()" >
-                       
-                      
- 
- 
-  <input class="btn btn-success" type="submit" name="submit_reg" value="view" (click)="viewDetails()" style="float: right;" >
-</div>
-  
-  <div class="main">
-    <div class="header">
-        <table class="table">
-        </table>
-    </div>
-    <div class="sub">
+        </div>
 
-        <div class="subdiv">
-            <table class="table">
+        <div class="form-group">
+          <label for="packAge">Package :</label>
+          <select input type="text" class="form-control" id="packAge" [(ngModel)]="custCarDetails.packAge"
+            name="userName" id="txt" placeholder="select package" required>
+            <option value="gold" selected>Gold</option>
+            <option value="silver " selected>Silver</option>
+            <option value="platinum" selected>Platinum</option>
+          </select>
+        </div>
 
-                <thead class="thead-dark">
+        <div class="form-group">
+          <label for="date">Date :</label>
+          <input type="date" class="form-control" id="date" [(ngModel)]="custCarDetails.date" name="date" id="txt"
+            placeholder="select date" required>
+        </div>
 
-                   
+        <div class="form-group">
+          <label for="time">Time :</label>
+          <input type="time" class="form-control" id="time" [(ngModel)]="custCarDetails.time" name="time" id="txt"
+            placeholder="select time" required>
+        </div>
+
+
+        <div class="form-group">
+          <input class="btn btn-success" type="submit" name="submit_reg" value="submit" (click)="saveDetails()">
+          <input class="btn btn-success" type="submit" name="submit_reg" value="view" (click)="viewDetails()"
+            style="float: right;">
+          <input class="btn btn-success" type="submit" name="submit_reg" value="delete" (click)="delete()" style=" margin: 0;
+                        position: absolute;left: 45%;">
+
+
+
+          <div class="main">
+            <div class="header">
+              <table class="table">
+              </table>
+            </div>
+            <div class="sub">
+
+              <div class="subdiv">
+                <table class="table">
+
+                  <thead class="thead-dark">
+
+                    <th>Id</th>
                     <th>CarName</th>
                     <th>Payment Details</th>
                     <th>Package</th>
                     <th>Date</th>
                     <th>Time</th>
-                </thead>
-                <tbody>
+                  </thead>
+                  <tbody>
                     <tr *ngFor='let str of list'>
-                       
-                        <td>{{str.carName}}</td>
-                        <td>{{str.paymentDetails}}</td>
-                        <td>{{str.packAge}}</td>
-                        <td>{{str.date}}</td>
-                        <td>{{str.time}}</td>
-                        
+                      <td>{{str._id}}</td>
+                      <td>{{str.carName}}</td>
+                      <td>{{str.paymentDetails}}</td>
+                      <td>{{str.packAge}}</td>
+                      <td>{{str.date}}</td>
+                      <td>{{str.time}}</td>
+
                     </tr>
-                </tbody>
-            </table>
+                  </tbody>
+                </table>
 
+              </div>
+            </div>
+          </div>
         </div>
-        </div>
-        </div>
-<!-- </div> -->
-                </fieldset>
-        </div>
-        </div>
+      </fieldset>
     </div>
-</form>
-
+  </div>
 </div>

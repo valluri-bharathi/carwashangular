@@ -25,4 +25,7 @@ export class UserLoginService {
   public view(custCarDetails){
     return this.http.post("http://localhost:8084/login/view", custCarDetails);
   }
+  public delete(custCarDetails){
+    return this.http.post("http://localhost:8084/login/delete", custCarDetails, {responseType:  'text' as 'json'});
+  }
 }
