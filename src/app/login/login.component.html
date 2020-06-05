@@ -6,6 +6,13 @@
 <div style="text-align: center">
     <h3>{{message}}</h3>
 </div>
+<h1 id="title">SPLASH WASHERS</h1>
+<div class="header">
+<a routerLink="/login" >Login</a>&nbsp;&nbsp;
+<a routerLink="/register">SignUp</a>
+</div>
+<img id="image" src="../assets/image/istockphoto-482833590-1024x1024.jpg">
+<h2 id="caption">Your car, our shine!!</h2>
 
 <div class="container">
     <!-- <form> -->
@@ -13,18 +20,30 @@
         <div class="col-md-6">
                 <fieldset>
                     <h3>Login</h3>
+                    <div class="form-group">
+                        <label>Role</label>
+                            <select input name="role"  class="form-control" 
+                            [(ngModel)]="customerDetails.role" #role="ngModel" placeholder="select role">
+                            <option value="customer" selected>Customer</option>
+                            <option value="admin" selected>Admin</option>
+                            </select>
+                            <!-- <div *ngIf="role.errors.required">
+                                Name is required.
+                              </div> -->
+                            <!-- <div *ngIf="role.errors.required" class="alert alert-danger">please select role</div> -->
+                    </div>
 
                     <div class="form-group">
                         <label>UserName</label>
                         <input id="userName" name="userName" class="form-control" pattern="[a-zA-Z ]*"
-                        [(ngModel)]="customerDetails.userName" #userName="ngModel"
+                        [(ngModel)]="customerDetails.userName "  #userName="ngModel"
                         placeholder="Enter valid username" >
                         <div *ngIf = "userName.invalid" class="alert alert-danger">enter proper username</div>
                     </div>
 
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="name" [(ngModel)]="customerDetails.password" placeholder="Enter password" required>
+                        <input type="password" class="form-control" id="name" [(ngModel)]="customerDetails.password " placeholder="Enter password" required>
                       </div>
                     <div class="form-group">
                         <input class="btn btn-success" type="submit" name="submit_reg" value="login" (click)="loginNow()">

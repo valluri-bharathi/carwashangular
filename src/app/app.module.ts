@@ -11,6 +11,13 @@ import { CarDetailsComponent } from './car-details/car-details.component';
 import { RegisterComponent } from './register/register.component';
 import { SuccessComponent } from './success/success.component';
 import { DeleteComponent } from './delete/delete.component';
+import { AdminComponent } from './admin/admin.component';
+import { AboutComponent } from './about/about.component';
+import { ViewComponent } from './view/view.component';
+import { ServiceComponent } from './service/service.component';
+import { AddonComponent } from './addon/addon.component';
+
+
 
 
 @NgModule({
@@ -20,7 +27,14 @@ import { DeleteComponent } from './delete/delete.component';
     CarDetailsComponent,
     RegisterComponent,
     SuccessComponent,
-    DeleteComponent
+    DeleteComponent,
+    AdminComponent,
+    AboutComponent,
+    ViewComponent,
+    ServiceComponent,
+    AddonComponent
+   
+    
     
   ],
   imports: [

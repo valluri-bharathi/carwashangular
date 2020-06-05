@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  customerDetails: CustomerDetails= new CustomerDetails("","");
+  customerDetails: CustomerDetails= new CustomerDetails("","","");
   message: any;
   public errorMsg;
   errorcontrol: boolean=false;

@@ -1,0 +1,53 @@
+<h1>Welcome to Admin</h1>
+<div id="sidebar" class="sidebar">
+
+  <ul>
+
+    <li> DASHBOARD</li>
+    <li> <a routerLink="/view">Customer List </a>
+
+    </li>
+    <li> <a routerLink="/service">Service Plan Management</a></li>
+    <li><a  routerLink="/addon">Add-on Management</a></li>
+    <li><a routerLink="/about">About </a> </li>
+    <li><a href="#">Contact</a></li>
+
+  </ul>
+
+</div>
+<div class="sub">
+    <input class="btn btn-success" type="submit" name="submit_reg" value="view" (click)="viewDetails()"
+    style="position:absolute; left:80px; top:20px" >
+    <div class="subdiv">
+        <div class="form">
+      <table class="center" *ngIf="display" >
+        <!-- <table align="center" *ngIf="display"> -->
+        <thead class="thead-dark">
+
+          <th>Id</th>
+          <th>UserName</th>
+          <th>CarName</th>
+          <th>Payment Details</th>
+          <th>Package</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>status</th>
+        </thead>
+        <tbody>
+          <tr *ngFor='let str of list'>
+            <td>{{str._id}}</td>
+            <td>{{str.userName}}</td>
+            <td>{{str.carName}}</td>
+            <td>{{str.paymentDetails}}</td>
+            <td>{{str.packAge}}</td>
+            <td>{{str.date}}</td>
+            <td>{{str.time}}</td>
+            <td>pending</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    </div>
+    </div>

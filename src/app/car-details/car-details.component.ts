@@ -11,12 +11,14 @@ import { Router } from '@angular/router';
 export class CarDetailsComponent implements OnInit {
   message: any;
   enableButton: boolean=true;
-  custDetails: CustomerDetails= new CustomerDetails("","");
+  custDetails: CustomerDetails= new CustomerDetails("","","");
   custName1: any;
   
   custCarDetails: CustCarDetails= new CustCarDetails("","","","","","");
  userName1: any;
   list: any;
+  url="";
+  display: boolean=false;
 
   constructor(private service:UserLoginService,public router: Router) { }
 
@@ -51,6 +53,7 @@ export class CarDetailsComponent implements OnInit {
     this.list=[];
     this.service.view(this.custCarDetails).subscribe(
       data =>{
+        this.display=true;
         
         this.list=data;
       }

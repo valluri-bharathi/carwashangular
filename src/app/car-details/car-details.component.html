@@ -1,6 +1,12 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<h1 id="title">SPLASH WASHERS</h1>
+<div class="header">
+<a routerLink="/login" >Logout</a>&nbsp;&nbsp;
+</div>
+<img id="image" src="../assets/image/istockphoto-482833590-1024x1024.jpg">
+<h2 id="caption">Your car, our shine!!</h2>
 <div class="container">
   <div style="text-align: right;">
     <h3>Welcome {{custName1}}!!</h3>
@@ -64,14 +70,14 @@
 
 
           <div class="main">
-            <div class="header">
+            <!-- <div class="header"> -->
               <table class="table">
               </table>
             </div>
             <div class="sub">
 
               <div class="subdiv">
-                <table class="table">
+                <table class="table" *ngIf="display">
 
                   <thead class="thead-dark">
 
@@ -81,6 +87,7 @@
                     <th>Package</th>
                     <th>Date</th>
                     <th>Time</th>
+                    <th>status</th>
                   </thead>
                   <tbody>
                     <tr *ngFor='let str of list'>
@@ -90,13 +97,14 @@
                       <td>{{str.packAge}}</td>
                       <td>{{str.date}}</td>
                       <td>{{str.time}}</td>
+                      <td>pending</td>
 
                     </tr>
                   </tbody>
                 </table>
 
               </div>
-            </div>
+            <!-- </div> -->
           </div>
         </div>
       </fieldset>

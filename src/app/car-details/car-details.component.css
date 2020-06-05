@@ -54,4 +54,27 @@ subdiv{
     display: inline-block;
     
     }
+    h1{
+        text-align: center;
+        font-family: courier,arial,helvetica;
+    }
+    .header{
+        padding: 10px;
+        text-align: right;
+        /* text-align: left; */
+        background-color:blanchedalmond;
+        font-size: large;
+        color: black;
+    }
+    #image{
+        float:left;
+        width: 500px;
+        height: 400px;
+        position:static;
+        
+    }
+    h2{
+        text-align: center;
+        font-family: courier,arial,helvetica;
+    }
     

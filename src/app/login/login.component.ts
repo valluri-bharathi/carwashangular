@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserLoginService } from '../user-login.service';
 import { CustomerDetails } from '../customerDetails';
 import { Router } from '@angular/router';
+import { AdminDetails } from '../adminDetails';
 
 
 @Component({
@@ -11,13 +12,14 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  customerDetails: CustomerDetails= new CustomerDetails("","");
+  customerDetails: CustomerDetails= new CustomerDetails("","","");
   message: any;
   cuDetail: any;
   errorMsg: any;
   errorcontrol: boolean=false;
   // public redirectUrl: 'login/addDetails';
-  
+  adminDetails:AdminDetails=new AdminDetails("","");
+
   constructor(private service:UserLoginService, public router:Router){}
   ngOnInit(): void {
   }
@@ -25,21 +27,40 @@ export class LoginComponent implements OnInit {
   public loginNow(){
     let response;
     
+    if(this.customerDetails.role==="customer"){
+      this.service.login(this.customerDetails).subscribe(
+        data =>{
+          console.log("entered");
+          this.cuDetail=data;
+          localStorage.setItem('name',JSON.stringify(this.cuDetail.userName));
+         console.log(JSON.parse(localStorage.getItem("name")));
+          console.log(data);
+          this.router.navigate(['/addDetails']);
+        },
+        error =>{
+        alert("enter correct credentials");
+          this.errorMsg = this.service;
+          this.errorcontrol = true;
+        }
+      )
 
-    this.service.login(this.customerDetails).subscribe(
-      data =>{
-        console.log("entered");
-        this.cuDetail=data;
-        localStorage.setItem('name',JSON.stringify(this.cuDetail.userName));
-       console.log(JSON.parse(localStorage.getItem("name")));
-        console.log(data);
-        this.router.navigate(['/addDetails']);
-      },
-      error =>{
-      alert("enter correct credentials");
-        this.errorMsg = this.service;
-        this.errorcontrol = true;
-      }
-    )
+    }else{
+      this.service.admin(this.customerDetails).subscribe(
+        data =>{
+          this.cuDetail=data;
+          localStorage.setItem('name',JSON.stringify(this.cuDetail.userName));
+         console.log(JSON.parse(localStorage.getItem("name")));
+          console.log(data);
+          this.router.navigate(['/admin']);
+        },
+        error =>{
+        alert("enter correct credentials");
+          this.errorMsg = this.service;
+          this.errorcontrol = true;
+        }
+      )
+
+    }
+    
   }
 }
