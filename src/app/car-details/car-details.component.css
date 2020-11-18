@@ -30,10 +30,28 @@ span.req {
 h1{
     text-align: center;
     border-spacing: 15px 50px;
+    font-family: courier,arial,helvetica;
+    display: block;
+    font-weight: bold;
 }
-h3{
-    text-align:center;
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    text-align: center;
 }
+h4{
+    text-align: center;
+    border-spacing: 15px 50px;
+    font-family: courier,arial,helvetica;
+    display: block;
+    font-weight: bold;
+}
+
 .table{
     margin-top: 5%;
     width: 100%;
@@ -54,10 +72,7 @@ subdiv{
     display: inline-block;
     
     }
-    h1{
-        text-align: center;
-        font-family: courier,arial,helvetica;
-    }
+    
     .header{
         padding: 10px;
         text-align: right;
@@ -76,5 +91,7 @@ subdiv{
     h2{
         text-align: center;
         font-family: courier,arial,helvetica;
+        font-weight: bold;
+
     }
     

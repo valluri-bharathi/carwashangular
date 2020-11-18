@@ -13,6 +13,7 @@ export class AddonComponent implements OnInit {
   }
   public submit(){
     alert("successfully added");
+    window.location.reload();
   
 }
 // public saveDetails(){

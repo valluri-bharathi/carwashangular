@@ -1,23 +1,10 @@
-<h1>Welcome to Admin</h1>
-<div id="sidebar" class="sidebar">
+<app-dashboard></app-dashboard>
 
-  <ul>
 
-    <li> DASHBOARD</li>
-    <li> <a routerLink="/view">Customer List </a>
-
-    </li>
-    <li> <a routerLink="/service">Service Plan Management</a></li>
-    <li><a  routerLink="/addon">Add-on Management</a></li>
-    <li><a routerLink="/about">About </a> </li>
-    <li><a href="#">Contact</a></li>
-
-  </ul>
-
-</div>
 <div class="sub">
     <input class="btn btn-success" type="submit" name="submit_reg" value="view" (click)="viewDetails()"
     style="position:absolute; left:80px; top:20px" >
+    <!-- <button type="submit" (click)="viewDetails()" >View</button> -->
     <div class="subdiv">
         <div class="form">
       <table class="center" *ngIf="display" >

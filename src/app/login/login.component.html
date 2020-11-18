@@ -1,65 +1,62 @@
+<app-header></app-header>
+<body>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-<div style="text-align: center">
-    <h3>{{message}}</h3>
-</div>
-<h1 id="title">SPLASH WASHERS</h1>
-<div class="header">
-<a routerLink="/login" >Login</a>&nbsp;&nbsp;
-<a routerLink="/register">SignUp</a>
-</div>
-<img id="image" src="../assets/image/istockphoto-482833590-1024x1024.jpg">
-<h2 id="caption">Your car, our shine!!</h2>
-
-<div class="container">
-    <!-- <form> -->
-    <div class="row">
-        <div class="col-md-6">
-                <fieldset>
-                    <h3>Login</h3>
-                    <div class="form-group">
-                        <label>Role</label>
-                            <select input name="role"  class="form-control" 
-                            [(ngModel)]="customerDetails.role" #role="ngModel" placeholder="select role">
+ <form [formGroup]="loginForm" #formreg="ngForm" (ngSubmit)="loginNow(formreg)" novalidate>
+    <div class="container">
+      <h1><i class="fa fa-user icon" style="font-size: 54px;color: green;"></i>Login</h1>
+      <!-- <p>Please fill in this form to create an account.</p> -->
+      <hr>
+  
+      <div class="input-container">
+        <i class="fa fa-user icon" style="font-size: 32px;color:black"></i>
+        <input class="input-field" type="text" formControlName="userName" placeholder="Enter your username..." ngModel name="userName"
+        id="name" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" />
+        <div *ngIf="submitted && f.userName.errors" class="invalid-data">
+          <div *ngIf="f.userName.errors.required">username is required</div>
+        </div>
+      </div>
+      
+      <div class="input-container">
+        <i class="fa fa-key icon" style="font-size: 32px;color:black"></i>
+        <input class="input-field" type="password" placeholder="Password" formControlName="password" ngModel name="password"
+        [ngClass]="{'is-invalid': submitted && f.password.errors}" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-data">
+          <div *ngIf="f.password.errors.required">password is required!</div>
+          <div *ngIf="f.password.errors.minlength">password must be atleast 5 characters!</div>
+        </div>
+      </div>
+      
+      <div class="input-container">
+        <i class="fa fa-user icon" style="font-size: 32px;color:black"></i>
+        <select class="input-field" type="text"  formControlName="role" placeholder="Enter your role..." ngModel name="role"
+        id="role" [ngClass]="{ 'is-invalid': submitted && f.role.errors }">
                             <option value="customer" selected>Customer</option>
                             <option value="admin" selected>Admin</option>
-                            </select>
-                            <!-- <div *ngIf="role.errors.required">
-                                Name is required.
-                              </div> -->
-                            <!-- <div *ngIf="role.errors.required" class="alert alert-danger">please select role</div> -->
-                    </div>
+                            
+        <div *ngIf="f.role.errors.required">role is required!</div>
+      </select>
+      </div>
 
-                    <div class="form-group">
-                        <label>UserName</label>
-                        <input id="userName" name="userName" class="form-control" pattern="[a-zA-Z ]*"
-                        [(ngModel)]="customerDetails.userName "  #userName="ngModel"
-                        placeholder="Enter valid username" >
-                        <div *ngIf = "userName.invalid" class="alert alert-danger">enter proper username</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="name" [(ngModel)]="customerDetails.password " placeholder="Enter password" required>
-                      </div>
-                    <div class="form-group">
-                        <input class="btn btn-success" type="submit" name="submit_reg" value="login" (click)="loginNow()">
-                      
-                        
-                    </div>
-                    <div>
-                         <a [routerLink]="['/register']">Register now</a>
-                         
-                    </div>
-                    <!-- <div  class="alert alert-danger col-sm-3" *ngIf="errorcontrol">
-                        Please enter valid Details
-                    </div> -->
-                </fieldset>
-            </div>
+    
+      <hr>
+      <!-- <p><span><input type="checkbox" checked="checked" name="agreeterms"></span> &nbsp;By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p> -->
+  
+      <button type="submit" class="registerbtn" >Login</button>
+      <div class="container signin">
+      
+       
+      <p>Already have an account? 
+        <a [routerLink]="['/register']">Register now</a></p>
+      </div>
     </div>
+    
+    
+  </form>
+</body>
 
 
-</div>
+
+
+ 

@@ -35,7 +35,8 @@ export class CarDetailsComponent implements OnInit {
     this.service.addDetails(this.custCarDetails).subscribe(
       data =>{
         console.log(data);
-        this.router.navigate(['/success']);
+        alert("submitted successfully");
+        window.location.reload();
         
         
       },
@@ -62,10 +63,27 @@ export class CarDetailsComponent implements OnInit {
       }
     )
   }
-  public delete(){
-    alert('Select an id');
-    this.router.navigate(['/delete']);
-    
+  radioSelect(event:any){
+    this.custCarDetails._id= event.target.value;
   }
+
+  public delete(){
+    
+    // this.successDisplay=false;
+    if(confirm("Are you sure to delete car ID "+this.custCarDetails._id+"?" )){
+    this.service.delete(this.custCarDetails).subscribe(
+      data=>{
+        window.location.reload();
+        alert(this.message="Deleted successfully");
+
+      },
+      error=>{
+        this.message="";
+        alert("please provide valid CAR ID");
+      }
+    )
+  }
+}
+  
  
   }

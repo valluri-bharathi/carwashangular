@@ -1,4 +1,7 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <h1 id="title">SPLASH WASHERS</h1>
@@ -11,6 +14,7 @@
   <div style="text-align: right;">
     <h3>Welcome {{custName1}}!!</h3>
   </div>
+  
 
 
 
@@ -18,16 +22,32 @@
     <div class="col-md-6">
       <fieldset>
 
-        <h1>Add Details</h1>
+        <h4>Add Details</h4>
+        
 
         <div class="form-group">
-          <label for="carName">CarName :</label>
+          
+            <label class="required">CarName</label>
+            <style>
+                .required:after {
+                  content:" *";
+                  color: red;
+                }
+              </style>
+          <!-- <label for="carName">CarName :</label> -->
           <input type="text" class="form-control" id="userName" [(ngModel)]="custCarDetails.carName" name="userName"
             id="txt" placeholder="Enter car name" required>
         </div>
 
         <div class="form-group">
-          <label for="paymentDetails">Payment Details :</label>
+          <label class="required">Payment Details </label>
+          <style>
+              .required:after {
+                content:" *";
+                color: red;
+              }
+            </style>
+          <!-- <label for="paymentDetails">Payment Details :</label> -->
           <select input type="text" class="form-control" id="paymentDetails" [(ngModel)]="custCarDetails.paymentDetails"
             name="paymentDetails" id="txt" placeholder="select mode of payment" required>
             <option value="cod" selected>COD</option>
@@ -36,9 +56,18 @@
           </select>
 
         </div>
+        
+        
 
         <div class="form-group">
-          <label for="packAge">Package :</label>
+          <label class="required">Package</label>
+          <style>
+              .required:after {
+                content:" *";
+                color: red;
+              }
+            </style>
+          <!-- <label for="packAge">Package :</label> -->
           <select input type="text" class="form-control" id="packAge" [(ngModel)]="custCarDetails.packAge"
             name="userName" id="txt" placeholder="select package" required>
             <option value="gold" selected>Gold</option>
@@ -46,15 +75,30 @@
             <option value="platinum" selected>Platinum</option>
           </select>
         </div>
+       
 
         <div class="form-group">
-          <label for="date">Date :</label>
+          <label class="required">Date</label>
+          <style>
+              .required:after {
+                content:" *";
+                color: red;
+              }
+            </style>
+          <!-- <label for="date">Date :</label> -->
           <input type="date" class="form-control" id="date" [(ngModel)]="custCarDetails.date" name="date" id="txt"
             placeholder="select date" required>
         </div>
-
+       
         <div class="form-group">
-          <label for="time">Time :</label>
+          <label class="required">Time </label>
+          <style>
+              .required:after {
+                content:" *";
+                color: red;
+              }
+            </style>
+          <!-- <label for="time">Time :</label> -->
           <input type="time" class="form-control" id="time" [(ngModel)]="custCarDetails.time" name="time" id="txt"
             placeholder="select time" required>
         </div>
@@ -62,10 +106,9 @@
 
         <div class="form-group">
           <input class="btn btn-success" type="submit" name="submit_reg" value="submit" (click)="saveDetails()">
-          <input class="btn btn-success" type="submit" name="submit_reg" value="view" (click)="viewDetails()"
+         <input class="btn btn-success" type="submit" name="submit_reg" value="view" (click)="viewDetails()"
             style="float: right;">
-          <input class="btn btn-success" type="submit" name="submit_reg" value="delete" (click)="delete()" style=" margin: 0;
-                        position: absolute;left: 45%;">
+           
 
 
 
@@ -80,6 +123,7 @@
                 <table class="table" *ngIf="display">
 
                   <thead class="thead-dark">
+                    <th>select</th>
 
                     <th>Id</th>
                     <th>CarName</th>
@@ -91,6 +135,8 @@
                   </thead>
                   <tbody>
                     <tr *ngFor='let str of list'>
+                      <td><input type="radio" name="_id" value="{{str._id}}" (change)="radioSelect($event)"></td>
+                      
                       <td>{{str._id}}</td>
                       <td>{{str.carName}}</td>
                       <td>{{str.paymentDetails}}</td>
@@ -101,6 +147,8 @@
 
                     </tr>
                   </tbody>
+                  <input class="btn btn-success" type="submit" name="submit_reg" value="delete" (click)="delete()" style=" margin: 0;
+                        position: absolute;left: 45%;">
                 </table>
 
               </div>
@@ -110,4 +158,6 @@
       </fieldset>
     </div>
   </div>
-</div>
+
+
+

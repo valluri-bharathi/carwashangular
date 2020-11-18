@@ -4,12 +4,13 @@ import { LoginComponent } from './login/login.component';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import { RegisterComponent } from './register/register.component';
 import { SuccessComponent } from './success/success.component';
-import { DeleteComponent } from './delete/delete.component';
 import { AdminComponent } from './admin/admin.component';
 import { AboutComponent } from './about/about.component';
 import { ViewComponent } from './view/view.component';
 import { ServiceComponent } from './service/service.component';
 import { AddonComponent } from './addon/addon.component';
+import { ContactComponent } from './contact/contact.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 // import { HomeComponent } from './home/home.component';
 
 
@@ -26,11 +27,12 @@ const routes: Routes = [
   { path: 'addDetails', component: CarDetailsComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'success', component: SuccessComponent},
-  { path: 'delete', component: DeleteComponent},
   {path: 'about' , component: AboutComponent},
   {path: 'view', component: ViewComponent},
   {path: 'service',component: ServiceComponent},
-  {path: 'addon' , component: AddonComponent}
+  {path: 'addon' , component: AddonComponent},
+  {path: 'contact' , component: ContactComponent},
+  {path: 'dashboard' , component: DashboardComponent}
 ];
 
 @NgModule({
